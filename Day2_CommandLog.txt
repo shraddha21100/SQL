@@ -1,0 +1,1038 @@
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git status
+On branch master
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git log --oneline
+bf79633 (HEAD -> master) config:gitignore created to skip jar, exe, testda, folder bin
+ec9b80b WI1:File1 updated login feature
+414dd72 WI1:File1 created hello world added
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git branch
+* master
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git branch bug1
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git branch
+  bug1
+* master
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git checkout bug1
+Switched to branch 'bug1'
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (bug1)
+$ git log --oneline
+bf79633 (HEAD -> bug1, master) config:gitignore created to skip jar, exe, testda, folder bin
+ec9b80b WI1:File1 updated login feature
+414dd72 WI1:File1 created hello world added
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (bug1)
+$ git status
+On branch bug1
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   File1.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        File2.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (bug1)
+$ git add .
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (bug1)
+$ git commit -m "bug1:File2 created for bug fix and file1 updated"
+[bug1 7bcad6f] bug1:File2 created for bug fix and file1 updated
+ 2 files changed, 3 insertions(+), 2 deletions(-)
+ create mode 100644 File2.txt
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (bug1)
+$ git status
+On branch bug1
+nothing to commit, working tree clean
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (bug1)
+$ git log --oneline
+7bcad6f (HEAD -> bug1) bug1:File2 created for bug fix and file1 updated
+bf79633 (master) config:gitignore created to skip jar, exe, testda, folder bin
+ec9b80b WI1:File1 updated login feature
+414dd72 WI1:File1 created hello world added
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (bug1)
+$ git checkout master
+Switched to branch 'master'
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git log --oneline
+bf79633 (HEAD -> master) config:gitignore created to skip jar, exe, testda, folder bin
+ec9b80b WI1:File1 updated login feature
+414dd72 WI1:File1 created hello world added
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git merge bug1
+Updating bf79633..7bcad6f
+Fast-forward
+ File1.txt | 4 ++--
+ File2.txt | 1 +
+ 2 files changed, 3 insertions(+), 2 deletions(-)
+ create mode 100644 File2.txt
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git log --oneline
+7bcad6f (HEAD -> master, bug1) bug1:File2 created for bug fix and file1 updated
+bf79633 config:gitignore created to skip jar, exe, testda, folder bin
+ec9b80b WI1:File1 updated login feature
+414dd72 WI1:File1 created hello world added
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git branch
+  bug1
+* master
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git branch -d bug1
+Deleted branch bug1 (was 7bcad6f).
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git branch
+* master
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git log --oneline
+7bcad6f (HEAD -> master) bug1:File2 created for bug fix and file1 updated
+bf79633 config:gitignore created to skip jar, exe, testda, folder bin
+ec9b80b WI1:File1 updated login feature
+414dd72 WI1:File1 created hello world added
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git checkout -b bug2
+Switched to a new branch 'bug2'
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (bug2)
+$ git status
+On branch bug2
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   File1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (bug2)
+$ git log --oneline
+7bcad6f (HEAD -> bug2, master) bug1:File2 created for bug fix and file1 updated
+bf79633 config:gitignore created to skip jar, exe, testda, folder bin
+ec9b80b WI1:File1 updated login feature
+414dd72 WI1:File1 created hello world added
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (bug2)
+$ git commit -am "bug2:File1 updated added fix new line and colon"
+[bug2 9e748f8] bug2:File1 updated added fix new line and colon
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (bug2)
+$ git status
+On branch bug2
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (bug2)
+$ git log --oneline
+9e748f8 (HEAD -> bug2) bug2:File1 updated added fix new line and colon
+7bcad6f (master) bug1:File2 created for bug fix and file1 updated
+bf79633 config:gitignore created to skip jar, exe, testda, folder bin
+ec9b80b WI1:File1 updated login feature
+414dd72 WI1:File1 created hello world added
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (bug2)
+$ git checkout master
+Switched to branch 'master'
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git log --oneline
+7bcad6f (HEAD -> master) bug1:File2 created for bug fix and file1 updated
+bf79633 config:gitignore created to skip jar, exe, testda, folder bin
+ec9b80b WI1:File1 updated login feature
+414dd72 WI1:File1 created hello world added
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   File1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git commit -am "WI3:File1 updated by teammate for WI3 and added hyphen"
+[master 795d4e9] WI3:File1 updated by teammate for WI3 and added hyphen
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git log --oneline
+795d4e9 (HEAD -> master) WI3:File1 updated by teammate for WI3 and added hyphen
+7bcad6f bug1:File2 created for bug fix and file1 updated
+bf79633 config:gitignore created to skip jar, exe, testda, folder bin
+ec9b80b WI1:File1 updated login feature
+414dd72 WI1:File1 created hello world added
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git merge bug2
+Auto-merging File1.txt
+CONFLICT (content): Merge conflict in File1.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master|MERGING)
+$ git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+
+        both modified:   File1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master|MERGING)
+$ git log --oneline
+795d4e9 (HEAD -> master) WI3:File1 updated by teammate for WI3 and added hyphen
+7bcad6f bug1:File2 created for bug fix and file1 updated
+bf79633 config:gitignore created to skip jar, exe, testda, folder bin
+ec9b80b WI1:File1 updated login feature
+414dd72 WI1:File1 created hello world added
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master|MERGING)
+$ git commit -am "conflict resolved: bug2 and WI3"
+[master b163276] conflict resolved: bug2 and WI3
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git log --oneline
+b163276 (HEAD -> master) conflict resolved: bug2 and WI3
+795d4e9 WI3:File1 updated by teammate for WI3 and added hyphen
+9e748f8 (bug2) bug2:File1 updated added fix new line and colon
+7bcad6f bug1:File2 created for bug fix and file1 updated
+bf79633 config:gitignore created to skip jar, exe, testda, folder bin
+ec9b80b WI1:File1 updated login feature
+414dd72 WI1:File1 created hello world added
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git log --oneline --decorate --graph
+*   b163276 (HEAD -> master) conflict resolved: bug2 and WI3
+|\
+| * 9e748f8 (bug2) bug2:File1 updated added fix new line and colon
+* | 795d4e9 WI3:File1 updated by teammate for WI3 and added hyphen
+|/
+* 7bcad6f bug1:File2 created for bug fix and file1 updated
+* bf79633 config:gitignore created to skip jar, exe, testda, folder bin
+* ec9b80b WI1:File1 updated login feature
+* 414dd72 WI1:File1 created hello world added
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git checkout -b CR2
+Switched to a new branch 'CR2'
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (CR2)
+$ git status
+On branch CR2
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   File2.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (CR2)
+$ git commit -am "CR2:File2 updated for number and new linefor CR2 fix"
+[CR2 dbc444d] CR2:File2 updated for number and new linefor CR2 fix
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (CR2)
+$ git status
+On branch CR2
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (CR2)
+$ git log --oneline --decorate --graph
+* dbc444d (HEAD -> CR2) CR2:File2 updated for number and new linefor CR2 fix
+*   b163276 (master) conflict resolved: bug2 and WI3
+|\
+| * 9e748f8 (bug2) bug2:File1 updated added fix new line and colon
+* | 795d4e9 WI3:File1 updated by teammate for WI3 and added hyphen
+|/
+* 7bcad6f bug1:File2 created for bug fix and file1 updated
+* bf79633 config:gitignore created to skip jar, exe, testda, folder bin
+* ec9b80b WI1:File1 updated login feature
+* 414dd72 WI1:File1 created hello world added
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (CR2)
+$ git checkout master
+Switched to branch 'master'
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git log --oneline --decorate --graph
+*   b163276 (HEAD -> master) conflict resolved: bug2 and WI3
+|\
+| * 9e748f8 (bug2) bug2:File1 updated added fix new line and colon
+* | 795d4e9 WI3:File1 updated by teammate for WI3 and added hyphen
+|/
+* 7bcad6f bug1:File2 created for bug fix and file1 updated
+* bf79633 config:gitignore created to skip jar, exe, testda, folder bin
+* ec9b80b WI1:File1 updated login feature
+* 414dd72 WI1:File1 created hello world added
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   File2.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git commit -am "WI4:File2 updated by team mate for WI4 and added single quote"
+[master 92f184b] WI4:File2 updated by team mate for WI4 and added single quote
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git log --oneline --decorate --graph
+* 92f184b (HEAD -> master) WI4:File2 updated by team mate for WI4 and added single quote
+*   b163276 conflict resolved: bug2 and WI3
+|\
+| * 9e748f8 (bug2) bug2:File1 updated added fix new line and colon
+* | 795d4e9 WI3:File1 updated by teammate for WI3 and added hyphen
+|/
+* 7bcad6f bug1:File2 created for bug fix and file1 updated
+* bf79633 config:gitignore created to skip jar, exe, testda, folder bin
+* ec9b80b WI1:File1 updated login feature
+* 414dd72 WI1:File1 created hello world added
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git checkout CR2
+Switched to branch 'CR2'
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (CR2)
+$ git log --oneline --decorate --graph
+* dbc444d (HEAD -> CR2) CR2:File2 updated for number and new linefor CR2 fix
+*   b163276 conflict resolved: bug2 and WI3
+|\
+| * 9e748f8 (bug2) bug2:File1 updated added fix new line and colon
+* | 795d4e9 WI3:File1 updated by teammate for WI3 and added hyphen
+|/
+* 7bcad6f bug1:File2 created for bug fix and file1 updated
+* bf79633 config:gitignore created to skip jar, exe, testda, folder bin
+* ec9b80b WI1:File1 updated login feature
+* 414dd72 WI1:File1 created hello world added
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (CR2)
+$ git rebase master
+First, rewinding head to replay your work on top of it...
+Applying: CR2:File2 updated for number and new linefor CR2 fix
+Using index info to reconstruct a base tree...
+M       File2.txt
+Falling back to patching base and 3-way merge...
+Auto-merging File2.txt
+CONFLICT (content): Merge conflict in File2.txt
+error: Failed to merge in the changes.
+hint: Use 'git am --show-current-patch' to see the failed patch
+Patch failed at 0001 CR2:File2 updated for number and new linefor CR2 fix
+Resolve all conflicts manually, mark them as resolved with
+"git add/rm <conflicted_files>", then run "git rebase --continue".
+You can instead skip this commit: run "git rebase --skip".
+To abort and get back to the state before "git rebase", run "git rebase --abort".
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (CR2|REBASE 1/1)
+$ git status
+rebase in progress; onto 92f184b
+You are currently rebasing branch 'CR2' on '92f184b'.
+  (fix conflicts and then run "git rebase --continue")
+  (use "git rebase --skip" to skip this patch)
+  (use "git rebase --abort" to check out the original branch)
+
+Unmerged paths:
+  (use "git reset HEAD <file>..." to unstage)
+  (use "git add <file>..." to mark resolution)
+
+        both modified:   File2.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (CR2|REBASE 1/1)
+$ git log --oneline --decorate --graph
+* 92f184b (HEAD, master) WI4:File2 updated by team mate for WI4 and added single quote
+*   b163276 conflict resolved: bug2 and WI3
+|\
+| * 9e748f8 (bug2) bug2:File1 updated added fix new line and colon
+* | 795d4e9 WI3:File1 updated by teammate for WI3 and added hyphen
+|/
+* 7bcad6f bug1:File2 created for bug fix and file1 updated
+* bf79633 config:gitignore created to skip jar, exe, testda, folder bin
+* ec9b80b WI1:File1 updated login feature
+* 414dd72 WI1:File1 created hello world added
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (CR2|REBASE 1/1)
+$ git add .
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (CR2|REBASE 1/1)
+$ git status
+rebase in progress; onto 92f184b
+You are currently rebasing branch 'CR2' on '92f184b'.
+  (all conflicts fixed: run "git rebase --continue")
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   File2.txt
+
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (CR2|REBASE 1/1)
+$ git rebase --continue
+Applying: CR2:File2 updated for number and new linefor CR2 fix
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (CR2)
+$ git status
+On branch CR2
+nothing to commit, working tree clean
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (CR2)
+$ git log --oneline --decorate --graph
+* db7a0b2 (HEAD -> CR2) CR2:File2 updated for number and new linefor CR2 fix
+* 92f184b (master) WI4:File2 updated by team mate for WI4 and added single quote
+*   b163276 conflict resolved: bug2 and WI3
+|\
+| * 9e748f8 (bug2) bug2:File1 updated added fix new line and colon
+* | 795d4e9 WI3:File1 updated by teammate for WI3 and added hyphen
+|/
+* 7bcad6f bug1:File2 created for bug fix and file1 updated
+* bf79633 config:gitignore created to skip jar, exe, testda, folder bin
+* ec9b80b WI1:File1 updated login feature
+* 414dd72 WI1:File1 created hello world added
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (CR2)
+$ git checkout master
+Switched to branch 'master'
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git log --oneline --decorate --graph
+* 92f184b (HEAD -> master) WI4:File2 updated by team mate for WI4 and added single quote
+*   b163276 conflict resolved: bug2 and WI3
+|\
+| * 9e748f8 (bug2) bug2:File1 updated added fix new line and colon
+* | 795d4e9 WI3:File1 updated by teammate for WI3 and added hyphen
+|/
+* 7bcad6f bug1:File2 created for bug fix and file1 updated
+* bf79633 config:gitignore created to skip jar, exe, testda, folder bin
+* ec9b80b WI1:File1 updated login feature
+* 414dd72 WI1:File1 created hello world added
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git merge CR2
+Updating 92f184b..db7a0b2
+Fast-forward
+ File2.txt | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git log --oneline --decorate --graph
+* db7a0b2 (HEAD -> master, CR2) CR2:File2 updated for number and new linefor CR2 fix
+* 92f184b WI4:File2 updated by team mate for WI4 and added single quote
+*   b163276 conflict resolved: bug2 and WI3
+|\
+| * 9e748f8 (bug2) bug2:File1 updated added fix new line and colon
+* | 795d4e9 WI3:File1 updated by teammate for WI3 and added hyphen
+|/
+* 7bcad6f bug1:File2 created for bug fix and file1 updated
+* bf79633 config:gitignore created to skip jar, exe, testda, folder bin
+* ec9b80b WI1:File1 updated login feature
+* 414dd72 WI1:File1 created hello world added
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git tag V1.1
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git log --oneline --decorate --graph
+* db7a0b2 (HEAD -> master, tag: V1.1, CR2) CR2:File2 updated for number and new linefor CR2 fix
+* 92f184b WI4:File2 updated by team mate for WI4 and added single quote
+*   b163276 conflict resolved: bug2 and WI3
+|\
+| * 9e748f8 (bug2) bug2:File1 updated added fix new line and colon
+* | 795d4e9 WI3:File1 updated by teammate for WI3 and added hyphen
+|/
+* 7bcad6f bug1:File2 created for bug fix and file1 updated
+* bf79633 config:gitignore created to skip jar, exe, testda, folder bin
+* ec9b80b WI1:File1 updated login feature
+* 414dd72 WI1:File1 created hello world added
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git tag V1.0 bf79633
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git log --oneline --decorate --graph
+* db7a0b2 (HEAD -> master, tag: V1.1, CR2) CR2:File2 updated for number and new linefor CR2 fix
+* 92f184b WI4:File2 updated by team mate for WI4 and added single quote
+*   b163276 conflict resolved: bug2 and WI3
+|\
+| * 9e748f8 (bug2) bug2:File1 updated added fix new line and colon
+* | 795d4e9 WI3:File1 updated by teammate for WI3 and added hyphen
+|/
+* 7bcad6f bug1:File2 created for bug fix and file1 updated
+* bf79633 (tag: V1.0) config:gitignore created to skip jar, exe, testda, folder bin
+* ec9b80b WI1:File1 updated login feature
+* 414dd72 WI1:File1 created hello world added
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git checkout V1.0
+Note: checking out 'V1.0'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b <new-branch-name>
+
+HEAD is now at bf79633 config:gitignore created to skip jar, exe, testda, folder bin
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject ((V1.0))
+$ git log --oneline --decorate --graph
+* bf79633 (HEAD, tag: V1.0) config:gitignore created to skip jar, exe, testda, folder bin
+* ec9b80b WI1:File1 updated login feature
+* 414dd72 WI1:File1 created hello world added
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject ((V1.0))
+$ git chcekout master
+git: 'chcekout' is not a git command. See 'git --help'.
+
+The most similar command is
+        checkout
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject ((V1.0))
+$ git checkout master
+Previous HEAD position was bf79633 config:gitignore created to skip jar, exe, testda, folder bin
+Switched to branch 'master'
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   File1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git checkout bug2
+error: Your local changes to the following files would be overwritten by checkout:
+        File1.txt
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git stash save
+Saved working directory and index state WIP on master: db7a0b2 CR2:File2 updated for number and new linefor CR2 fix
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git stash list
+stash@{0}: WIP on master: db7a0b2 CR2:File2 updated for number and new linefor CR2 fix
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git checkout bug2
+Switched to branch 'bug2'
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (bug2)
+$ git checkout master
+Switched to branch 'master'
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git stash apply stash@{0}
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   File1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git commit -am "WI5: File1 updated for stash test"
+[master ed288c4] WI5: File1 updated for stash test
+ 1 file changed, 2 insertions(+)
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git checkout master
+Already on 'master'
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git log --oneline --decorate --graph
+* ed288c4 (HEAD -> master) WI5: File1 updated for stash test
+* db7a0b2 (tag: V1.1, CR2) CR2:File2 updated for number and new linefor CR2 fix
+* 92f184b WI4:File2 updated by team mate for WI4 and added single quote
+*   b163276 conflict resolved: bug2 and WI3
+|\
+| * 9e748f8 (bug2) bug2:File1 updated added fix new line and colon
+* | 795d4e9 WI3:File1 updated by teammate for WI3 and added hyphen
+|/
+* 7bcad6f bug1:File2 created for bug fix and file1 updated
+* bf79633 (tag: V1.0) config:gitignore created to skip jar, exe, testda, folder bin
+* ec9b80b WI1:File1 updated login feature
+* 414dd72 WI1:File1 created hello world added
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git remote
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git remote add origin https://github.com/VaishaliKhatal/SFProject.git
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git remote
+origin
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git remote -v
+origin  https://github.com/VaishaliKhatal/SFProject.git (fetch)
+origin  https://github.com/VaishaliKhatal/SFProject.git (push)
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git push -u origin master
+Enumerating objects: 31, done.
+Counting objects: 100% (31/31), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (24/24), done.
+Writing objects: 100% (31/31), 3.28 KiB | 167.00 KiB/s, done.
+Total 31 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas: 100% (3/3), done.
+To https://github.com/VaishaliKhatal/SFProject.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git log --oneline --decorate --graph
+* ed288c4 (HEAD -> master, origin/master) WI5: File1 updated for stash test
+* db7a0b2 (tag: V1.1, CR2) CR2:File2 updated for number and new linefor CR2 fix
+* 92f184b WI4:File2 updated by team mate for WI4 and added single quote
+*   b163276 conflict resolved: bug2 and WI3
+|\
+| * 9e748f8 (bug2) bug2:File1 updated added fix new line and colon
+* | 795d4e9 WI3:File1 updated by teammate for WI3 and added hyphen
+|/
+* 7bcad6f bug1:File2 created for bug fix and file1 updated
+* bf79633 (tag: V1.0) config:gitignore created to skip jar, exe, testda, folder bin
+* ec9b80b WI1:File1 updated login feature
+* 414dd72 WI1:File1 created hello world added
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   File1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git commit -am "WI6:File1 updated for normal push from local master"
+[master 9ba7a9c] WI6:File1 updated for normal push from local master
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git log --oneline --decorate --graph
+* 9ba7a9c (HEAD -> master) WI6:File1 updated for normal push from local master
+* ed288c4 (origin/master) WI5: File1 updated for stash test
+* db7a0b2 (tag: V1.1, CR2) CR2:File2 updated for number and new linefor CR2 fix
+* 92f184b WI4:File2 updated by team mate for WI4 and added single quote
+*   b163276 conflict resolved: bug2 and WI3
+|\
+| * 9e748f8 (bug2) bug2:File1 updated added fix new line and colon
+* | 795d4e9 WI3:File1 updated by teammate for WI3 and added hyphen
+|/
+* 7bcad6f bug1:File2 created for bug fix and file1 updated
+* bf79633 (tag: V1.0) config:gitignore created to skip jar, exe, testda, folder bin
+* ec9b80b WI1:File1 updated login feature
+* 414dd72 WI1:File1 created hello world added
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git push origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 433 bytes | 144.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/VaishaliKhatal/SFProject.git
+   ed288c4..9ba7a9c  master -> master
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git log --oneline --decorate --graph
+* 9ba7a9c (HEAD -> master, origin/master) WI6:File1 updated for normal push from local master
+* ed288c4 WI5: File1 updated for stash test
+* db7a0b2 (tag: V1.1, CR2) CR2:File2 updated for number and new linefor CR2 fix
+* 92f184b WI4:File2 updated by team mate for WI4 and added single quote
+*   b163276 conflict resolved: bug2 and WI3
+|\
+| * 9e748f8 (bug2) bug2:File1 updated added fix new line and colon
+* | 795d4e9 WI3:File1 updated by teammate for WI3 and added hyphen
+|/
+* 7bcad6f bug1:File2 created for bug fix and file1 updated
+* bf79633 (tag: V1.0) config:gitignore created to skip jar, exe, testda, folder bin
+* ec9b80b WI1:File1 updated login feature
+* 414dd72 WI1:File1 created hello world added
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git log --oneline --decorate --graph
+* 9ba7a9c (HEAD -> master, origin/master) WI6:File1 updated for normal push from local master
+* ed288c4 WI5: File1 updated for stash test
+* db7a0b2 (tag: V1.1, CR2) CR2:File2 updated for number and new linefor CR2 fix
+* 92f184b WI4:File2 updated by team mate for WI4 and added single quote
+*   b163276 conflict resolved: bug2 and WI3
+|\
+| * 9e748f8 (bug2) bug2:File1 updated added fix new line and colon
+* | 795d4e9 WI3:File1 updated by teammate for WI3 and added hyphen
+|/
+* 7bcad6f bug1:File2 created for bug fix and file1 updated
+* bf79633 (tag: V1.0) config:gitignore created to skip jar, exe, testda, folder bin
+* ec9b80b WI1:File1 updated login feature
+* 414dd72 WI1:File1 created hello world added
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git pull
+
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/VaishaliKhatal/SFProject
+   9ba7a9c..f59301c  master     -> origin/master
+Updating 9ba7a9c..f59301c
+Fast-forward
+ File2.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git log --oneline --decorate --graph
+* f59301c (HEAD -> master, origin/master) CR1:File2 updated by team mate on remote master to test pull
+* 9ba7a9c WI6:File1 updated for normal push from local master
+* ed288c4 WI5: File1 updated for stash test
+* db7a0b2 (tag: V1.1, CR2) CR2:File2 updated for number and new linefor CR2 fix
+* 92f184b WI4:File2 updated by team mate for WI4 and added single quote
+*   b163276 conflict resolved: bug2 and WI3
+|\
+| * 9e748f8 (bug2) bug2:File1 updated added fix new line and colon
+* | 795d4e9 WI3:File1 updated by teammate for WI3 and added hyphen
+|/
+* 7bcad6f bug1:File2 created for bug fix and file1 updated
+* bf79633 (tag: V1.0) config:gitignore created to skip jar, exe, testda, folder bin
+* ec9b80b WI1:File1 updated login feature
+* 414dd72 WI1:File1 created hello world added
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   File1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git commit -am "WI7:File1 updated for hyphen added and new line added on local master"
+[master 1614e88] WI7:File1 updated for hyphen added and new line added on local master
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git log --oneline --decorate --graph
+* 1614e88 (HEAD -> master) WI7:File1 updated for hyphen added and new line added on local master
+* f59301c (origin/master) CR1:File2 updated by team mate on remote master to test pull
+* 9ba7a9c WI6:File1 updated for normal push from local master
+* ed288c4 WI5: File1 updated for stash test
+* db7a0b2 (tag: V1.1, CR2) CR2:File2 updated for number and new linefor CR2 fix
+* 92f184b WI4:File2 updated by team mate for WI4 and added single quote
+*   b163276 conflict resolved: bug2 and WI3
+|\
+| * 9e748f8 (bug2) bug2:File1 updated added fix new line and colon
+* | 795d4e9 WI3:File1 updated by teammate for WI3 and added hyphen
+|/
+* 7bcad6f bug1:File2 created for bug fix and file1 updated
+* bf79633 (tag: V1.0) config:gitignore created to skip jar, exe, testda, folder bin
+* ec9b80b WI1:File1 updated login feature
+* 414dd72 WI1:File1 created hello world added
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git push
+To https://github.com/VaishaliKhatal/SFProject.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/VaishaliKhatal/SFProject.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git fetch
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/VaishaliKhatal/SFProject
+   f59301c..fbe1ba6  master     -> origin/master
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git log --oneline --decorate --graph
+* 1614e88 (HEAD -> master) WI7:File1 updated for hyphen added and new line added on local master
+* f59301c CR1:File2 updated by team mate on remote master to test pull
+* 9ba7a9c WI6:File1 updated for normal push from local master
+* ed288c4 WI5: File1 updated for stash test
+* db7a0b2 (tag: V1.1, CR2) CR2:File2 updated for number and new linefor CR2 fix
+* 92f184b WI4:File2 updated by team mate for WI4 and added single quote
+*   b163276 conflict resolved: bug2 and WI3
+|\
+| * 9e748f8 (bug2) bug2:File1 updated added fix new line and colon
+* | 795d4e9 WI3:File1 updated by teammate for WI3 and added hyphen
+|/
+* 7bcad6f bug1:File2 created for bug fix and file1 updated
+* bf79633 (tag: V1.0) config:gitignore created to skip jar, exe, testda, folder bin
+* ec9b80b WI1:File1 updated login feature
+* 414dd72 WI1:File1 created hello world added
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git status
+On branch master
+Your branch and 'origin/master' have diverged,
+and have 1 and 1 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+
+nothing to commit, working tree clean
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git pull --rebase
+First, rewinding head to replay your work on top of it...
+Applying: WI7:File1 updated for hyphen added and new line added on local master
+Using index info to reconstruct a base tree...
+M       File1.txt
+Falling back to patching base and 3-way merge...
+Auto-merging File1.txt
+CONFLICT (content): Merge conflict in File1.txt
+error: Failed to merge in the changes.
+hint: Use 'git am --show-current-patch' to see the failed patch
+Patch failed at 0001 WI7:File1 updated for hyphen added and new line added on local master
+Resolve all conflicts manually, mark them as resolved with
+"git add/rm <conflicted_files>", then run "git rebase --continue".
+You can instead skip this commit: run "git rebase --skip".
+To abort and get back to the state before "git rebase", run "git rebase --abort".
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master|REBASE 1/1)
+$ git status
+rebase in progress; onto fbe1ba6
+You are currently rebasing branch 'master' on 'fbe1ba6'.
+  (fix conflicts and then run "git rebase --continue")
+  (use "git rebase --skip" to skip this patch)
+  (use "git rebase --abort" to check out the original branch)
+
+Unmerged paths:
+  (use "git reset HEAD <file>..." to unstage)
+  (use "git add <file>..." to mark resolution)
+
+        both modified:   File1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master|REBASE 1/1)
+$ git add .
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master|REBASE 1/1)
+$ git log --oneline --decorate --graph
+* fbe1ba6 (HEAD, origin/master) Bug3:File1 updated by team mate on remote master
+* f59301c CR1:File2 updated by team mate on remote master to test pull
+* 9ba7a9c WI6:File1 updated for normal push from local master
+* ed288c4 WI5: File1 updated for stash test
+* db7a0b2 (tag: V1.1, CR2) CR2:File2 updated for number and new linefor CR2 fix
+* 92f184b WI4:File2 updated by team mate for WI4 and added single quote
+*   b163276 conflict resolved: bug2 and WI3
+|\
+| * 9e748f8 (bug2) bug2:File1 updated added fix new line and colon
+* | 795d4e9 WI3:File1 updated by teammate for WI3 and added hyphen
+|/
+* 7bcad6f bug1:File2 created for bug fix and file1 updated
+* bf79633 (tag: V1.0) config:gitignore created to skip jar, exe, testda, folder bin
+* ec9b80b WI1:File1 updated login feature
+* 414dd72 WI1:File1 created hello world added
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master|REBASE 1/1)
+$ git rebase --continue
+Applying: WI7:File1 updated for hyphen added and new line added on local master
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git log --oneline --decorate --graph
+* 58a6c21 (HEAD -> master) WI7:File1 updated for hyphen added and new line added on local master
+* fbe1ba6 (origin/master) Bug3:File1 updated by team mate on remote master
+* f59301c CR1:File2 updated by team mate on remote master to test pull
+* 9ba7a9c WI6:File1 updated for normal push from local master
+* ed288c4 WI5: File1 updated for stash test
+* db7a0b2 (tag: V1.1, CR2) CR2:File2 updated for number and new linefor CR2 fix
+* 92f184b WI4:File2 updated by team mate for WI4 and added single quote
+*   b163276 conflict resolved: bug2 and WI3
+|\
+| * 9e748f8 (bug2) bug2:File1 updated added fix new line and colon
+* | 795d4e9 WI3:File1 updated by teammate for WI3 and added hyphen
+|/
+* 7bcad6f bug1:File2 created for bug fix and file1 updated
+* bf79633 (tag: V1.0) config:gitignore created to skip jar, exe, testda, folder bin
+* ec9b80b WI1:File1 updated login feature
+* 414dd72 WI1:File1 created hello world added
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 435 bytes | 108.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/VaishaliKhatal/SFProject.git
+   fbe1ba6..58a6c21  master -> master
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$ git log --oneline --decorate --graph
+* 58a6c21 (HEAD -> master, origin/master) WI7:File1 updated for hyphen added and new line added on local master
+* fbe1ba6 Bug3:File1 updated by team mate on remote master
+* f59301c CR1:File2 updated by team mate on remote master to test pull
+* 9ba7a9c WI6:File1 updated for normal push from local master
+* ed288c4 WI5: File1 updated for stash test
+* db7a0b2 (tag: V1.1, CR2) CR2:File2 updated for number and new linefor CR2 fix
+* 92f184b WI4:File2 updated by team mate for WI4 and added single quote
+*   b163276 conflict resolved: bug2 and WI3
+|\
+| * 9e748f8 (bug2) bug2:File1 updated added fix new line and colon
+* | 795d4e9 WI3:File1 updated by teammate for WI3 and added hyphen
+|/
+* 7bcad6f bug1:File2 created for bug fix and file1 updated
+* bf79633 (tag: V1.0) config:gitignore created to skip jar, exe, testda, folder bin
+* ec9b80b WI1:File1 updated login feature
+* 414dd72 WI1:File1 created hello world added
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project/SFProject (master)
+$
+
+vaishali_khatal@PTL009362 MINGW64 /d/Learning and Training/Git/Project
+$ git clone https://github.com/VaishaliKhatal/SFProject.git
+Cloning into 'SFProject'...
+remote: Enumerating objects: 43, done.
+remote: Counting objects: 100% (43/43), done.
+remote: Compressing objects: 100% (31/31), done.
+remote: Total 43 (delta 7), reused 36 (delta 5), pack-reused 0
+Unpacking objects: 100% (43/43), done.
